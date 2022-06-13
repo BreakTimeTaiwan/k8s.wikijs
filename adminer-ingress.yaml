@@ -2,6 +2,7 @@ kind: Ingress
 apiVersion: networking.k8s.io/v1
 metadata:
   name: adminer
+  namespace: wiki
 spec:
   ingressClassName: nginx
   rules:

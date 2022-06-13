@@ -2,6 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: wikijs-postgres-init
+  namespace: wiki
 data:
   init.sql: |-
       CREATE DATABASE wikijs;

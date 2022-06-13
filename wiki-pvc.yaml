@@ -2,6 +2,7 @@ kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
   name: postgres-prod-data
+  namespace: wiki
   finalizers:
     - kubernetes.io/pvc-protection
 spec:

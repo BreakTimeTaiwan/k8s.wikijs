@@ -2,6 +2,7 @@ apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
   name: wiki-azure-standard
+  namespace: wiki
 provisioner: kubernetes.io/azure-disk
 reclaimPolicy: Retain
 allowVolumeExpansion: true
