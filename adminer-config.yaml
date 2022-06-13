@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: adminer
+data:
+  ADMINER_DESIGN: pappu687
+  ADMINER_PLUGINS: tables-filter

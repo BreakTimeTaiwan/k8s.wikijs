@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: wikijs
+  name: wikijs
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: wikijs
+  template:
+    metadata:
+      labels:
+        app: wikijs
+    spec:
+      containers:
+        - name: wikijs
+          image: 'requarks/wiki'
+          ports:
+            - name: http-3000
+              protocol: TCP
+              containerPort: 3000
+          envFrom:
+          - secretRef:
+              name: wikijs
+          - configMapRef:
+              name: wikijs

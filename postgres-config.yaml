@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: wikijs-postgres-init
+data:
+  init.sql: |-
+      CREATE DATABASE wikijs;
+      CREATE USER wikijs with password 'Q123456789';
+      GRANT  CONNECT ON DATABASE wikijs TO wikijs;
+      GRANT  USAGE ON SCHEMA PUBLIC TO wikijs;
+      GRANT  SELECT,UPDATE ,INSERT ,DELETE ON ALL TABLES IN SCHEMA PUBLIC  TO wikijs;
+      ALTER  DEFAULT PRIVILEGES IN SCHEMA PUBLIC GRANT SELECT ON TABLES TO wikijs;

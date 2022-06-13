@@ -1,0 +1,17 @@
+kind: Ingress
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: adminer
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: adminer.breaktime.com.tw
+      http:
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: adminer
+                port:
+                  number: 9000
